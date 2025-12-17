@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FunEnglish Login</title><link rel="icon" type="image/png" href="Images/logo.png" />
+  <link rel="stylesheet" href="CSS/login.css" />
+</head>
+<body>
+  <div class="overlay">
+    <!-- فقاعات -->
+    <div class="bubbles">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- صندوق الدخول + CRUD -->
+    <div class="login-box">
+      <h2>
+        <img src="Images/logo.png" alt="Logo">
+        Welcome to FunEnglish  
+      </h2>
+
+      <form id="crudForm">
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <input type="number" id="age" placeholder="Enter your age" required />
+        <button type="submit" id="submitBtn" class="add-btn">Send🎈</button>
+      </form>
+
+      <input type="text" id="search" placeholder="🔍 Search by name or age" />
+
+      <ul id="userList"></ul>
+        <div id="welcomeMessage" class="welcome-message"></div>
+      <button class="close" onclick="closeLogin()">Close❗️</button>
+    </div>
+  </div>
+
+  <!-- الصوت -->
+  <audio id="welcomeSound" loop>
+    <source src="audio/sound-login.mp3" type="audio/mpeg">
+  </audio>
+  
+  <script src="JS/login.js"></script>
+</body>
+</html>

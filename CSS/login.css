@@ -1,0 +1,328 @@
+/* ===================== RESET + FONT ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', cursive;
+}
+
+body {
+    overflow-y: auto;
+  background: transparent;
+}
+@font-face {
+  font-family: 'Fredoka';
+  src: url('../Fonts/Fredoka-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Fredoka';
+  src: url('../Fonts/Fredoka-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* ===================== OVERLAY + BACKGROUND ===================== */
+.overlay {
+  position:relative;
+  inset: 0;
+  display: flex;
+  padding-top: 5vh;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(
+    120deg,
+    rgb(216, 118, 224),
+    rgb(241, 77, 140),
+    rgba(255, 200, 240, 0.945)
+  );
+  animation: moveBG 10s ease-in-out infinite;
+  z-index: 999;
+}
+
+@keyframes moveBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===================== BUBBLES ===================== */
+.bubbles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: -7.5rem; /* -120px ≈ 7.5rem */
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  animation: rise 15s linear infinite;
+}
+
+.bubbles span:nth-child(1) { width: 2.5rem; height: 2.5rem; left: 10%; animation-duration: 12s; }
+.bubbles span:nth-child(2) { width: 1.6rem; height: 1.6rem; left: 20%; animation-duration: 10s; }
+.bubbles span:nth-child(3) { width: 3.75rem; height: 3.75rem; left: 35%; animation-duration: 16s; }
+.bubbles span:nth-child(4) { width: 1.25rem; height: 1.25rem; left: 50%; animation-duration: 9s; }
+.bubbles span:nth-child(5) { width: 2.8rem; height: 2.8rem; left: 65%; animation-duration: 14s; }
+.bubbles span:nth-child(6) { width: 1.875rem; height: 1.875rem; left: 75%; animation-duration: 11s; }
+.bubbles span:nth-child(7) { width: 4.375rem; height: 4.375rem; left: 85%; animation-duration: 18s; }
+.bubbles span:nth-child(8) { width: 1.375rem; height: 1.375rem; left: 95%; animation-duration: 10s; }
+
+@keyframes rise {
+  0%   { transform: translateY(0) scale(1); opacity: 0; }
+  10%  { opacity: 0.6; }
+  100% { transform: translateY(-68.75rem) scale(1.2); opacity: 0; } /* -110vh ≈ 68.75rem */
+}
+
+/* ===================== LOGIN BOX ===================== */
+.login-box {
+  position: relative;
+  background: white;
+  z-index: 2;
+  padding: 2.8rem;      /* 45px */
+  width: 28.75rem;       /* 460px */
+  max-width: 90vw;       /* responsive */
+  border-radius: 2.2rem; /* 35px */
+  text-align: center;
+  box-shadow: 0 1.5rem 3.75rem rgba(255,105,180,0.35); /* 25px 60px */
+  animation: popup 0.6s cubic-bezier(.22,1,.36,1);
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+  max-height: none;
+  overflow: visible;
+  
+}
+
+@keyframes popup {
+  from { transform: translateY(2.5rem) scale(0.9); opacity: 0; } /* 40px */
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* ===================== HEADINGS ===================== */
+.login-box h2 {
+  color: #ff5ca8;
+  font-size: 1.625rem; /* 26px */
+  display: flex;
+  gap: 0.625rem;       /* 10px */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem; /* 25px */
+}
+
+.login-box h2 img {
+  width: 2.5rem; /* 40px */
+}
+
+/* ===================== INPUTS ===================== */
+.login-box input {
+  width: 100%;
+  padding: 0.875rem;  /* 14px */
+  margin: 0.75rem 0;  /* 12px 0 */
+  border-radius: 1.125rem; /* 18px */
+  border: 0.125rem solid #ffd1e8; /* 2px */
+  outline: none;
+  font-size: 1rem;    /* 16px */
+}
+
+/* ===================== BUTTONS ===================== */
+.login-box button {
+  width: 100%;
+  padding: 0.625rem;      /* 10px */
+  margin-top: 0.625rem;   /* 10px */
+  border: none;
+  border-radius: 1.125rem; /* 18px */
+  background: #ff5ca8;
+  color: white;
+  font-size: 0.875rem;       /* 14px */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background: #ff2f86;
+}
+
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+}
+.add-btn:hover {
+  background-color: #43a047;
+}
+
+.update-btn {
+  background-color: #ffc107;
+  color: black;
+}
+.update-btn:hover {
+  background-color: #ffb300;
+}
+
+.close {
+  background: #ffd1e8;
+  color: #ff2f86;
+  margin-top: 0.9375rem; /* 15px */
+  z-index: 3;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+/* ===================== SEARCH ===================== */
+#search {
+  margin-bottom: 0.9375rem; /* 15px */
+}
+
+/* ===================== LIST ===================== */
+
+ul#userList{
+    list-style: none;
+    max-height: 20rem;
+    overflow-y: auto;
+    padding: 0;
+    margin:0.75rem 0;
+}
+
+li {
+  background: #f4f4f4;
+  margin-bottom: 0.5rem; /* 10px */
+  padding: 0.75rem;        /* 12px */
+  border-radius: 0.5rem;   /* 8px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li span {
+  flex-grow: 1;
+}
+
+.actions button {
+  margin-left: 0.5rem;     /* 8px */
+  padding: 0.25rem 0.5rem; /* 6px 10px */
+  font-size: 0.75rem;     /* 14px */
+  border: none;
+  border-radius: 0.375rem; /* 6px */
+  cursor: pointer;
+}
+
+.actions .edit {
+  background-color: #03a9f4;
+  color: white;
+}
+
+.actions .delete {
+  background-color: #e91e63;
+  color: white;
+}
+.welcome-message {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #e6fff2;
+  color: #2e7d32;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  text-align: center;
+  animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+
+  /* الخلفية */
+  .overlay {
+    padding: 1rem;
+  }
+
+  /* صندوق الدخول */
+  .login-box {
+    width: 100%;
+    max-width: 22rem; /* ~350px */
+    padding: 1.5rem 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  /* العنوان */
+  .login-box h2 {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-left:0;
+  }
+
+  .login-box h2 img {
+    width: 2.5rem;
+    display: block;
+    margin: 0 auto 0.5rem;
+  }
+
+  /* الحقول */
+  .login-box input {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+
+  /* زر الإضافة */
+  .add-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  /* البحث */
+  #search {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  /* اللست */
+  ul#userList {
+    max-height: 14rem;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .actions button {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  /* زر الإغلاق */
+  .close {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+@media (max-width: 1024px) {
+
+  .login-box {
+    width: 26rem;
+  }
+
+  .login-box h2 {
+    font-size: 1.4rem;
+  }
+}
