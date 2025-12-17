@@ -915,11 +915,11 @@ input:checked + label .description {
     font-size: 1.5rem;
   }
   .nav li a{
-    margin-left:1rem;  
+    margin-left:0.9rem;  
     text-decoration:none;
-    font-size:1.5rem;
+    font-size:1.1rem;
     color:#ff5b99;
-    font-weight:440;
+    font-weight:400;
   }
   .hero {
     grid-template-columns: 1fr;
@@ -1183,7 +1183,7 @@ input:checked + label .description {
     font-size: 1.5rem;
   }
   .nav li a{
-    margin-left:25px;  /*اهني بكسل  */
+    margin-left:1.3rem; 
     text-decoration:none;
     font-size:1.25rem;
     color:#ff5b99;
@@ -1222,7 +1222,7 @@ input:checked + label .description {
   }
   .card1, .card2, .card3, .card4 {
     width: 100%;
-    margin-left: 7.5rem; /* مركزي الكروت */
+    margin-left: 4rem; /* مركزي الكروت */
     grid-template-columns: 1fr;
     height: auto;
     margin-top:2rem;
